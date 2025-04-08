@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="e1" class="com.itp.model.Engine">
+		<constructor-arg value="2.5"></constructor-arg>
+		<constructor-arg value="2500"></constructor-arg>
+		<constructor-arg value="Toyota"></constructor-arg>
+		<constructor-arg value="Petrol"></constructor-arg>
+	</bean>
+
+	<bean id="e2" class="com.itp.model.Engine">
+		<property name="engineLitre">
+			<value>1.2</value>
+		</property>
+
+		<property name="engineMfgName">
+			<value>Tata</value>
+		</property>
+
+		<property name="engineCC">
+			<value>1200</value>
+		</property>
+
+		<property name="engineType">
+			<value>Diesel</value>
+		</property>
+	</bean>
+
+	<bean id="t1" class="com.itp.model.Tyre">
+		<constructor-arg value="Radial"></constructor-arg>
+		<constructor-arg value="MRF"></constructor-arg>
+		<constructor-arg value="1200"></constructor-arg>
+	</bean>
+	
+	<bean id="t2" class="com.itp.model.Tyre">
+		<property name="tyreType">
+			<value>Biasply</value>
+		</property>
+
+		<property name="tyreMfgName">
+			<value>Ceat</value>
+		</property>
+
+		<property name="tyrePrice">
+			<value>1500</value>
+		</property>
+	</bean>
+	
+	
+	<bean id="c1" class="com.itp.model.Car">
+	<constructor-arg value="SUV"></constructor-arg>
+	<constructor-arg value="Toyota"></constructor-arg>
+	<constructor-arg value="Fortuner"></constructor-arg>
+	<constructor-arg value="5000"></constructor-arg>
+	
+	<constructor-arg ref="e1"></constructor-arg>
+	<constructor-arg ref="t1"></constructor-arg>
+	</bean>
+</beans>
