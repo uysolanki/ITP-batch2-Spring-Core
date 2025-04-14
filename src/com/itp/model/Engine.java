@@ -8,7 +8,9 @@ public class Engine {
 	private String engineType;
 	
 	
-	public Engine() {} //No Args Constructor
+	public Engine() {
+		System.out.println("No Args Constructor of Engine Invoked");
+	} //No Args Constructor
 	
 	//All Args Constructor
 	public Engine(double engineLitre, int engineCC, String engineMfgName, String engineType) {
@@ -17,6 +19,7 @@ public class Engine {
 		this.engineCC = engineCC;
 		this.engineMfgName = engineMfgName;
 		this.engineType = engineType;
+		System.out.println("All Args Constructor of Engine Invoked");
 	}
 
 	public double getEngineLitre() {

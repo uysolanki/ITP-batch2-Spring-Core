@@ -7,14 +7,14 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="e1" class="com.itp.model.Engine">
+	<bean id="engine" class="com.itp.model.Engine" scope="prototype" >
 		<constructor-arg value="2.5"></constructor-arg>
 		<constructor-arg value="2500"></constructor-arg>
 		<constructor-arg value="Toyota"></constructor-arg>
 		<constructor-arg value="Petrol"></constructor-arg>
 	</bean>
 
-	<bean id="e2" class="com.itp.model.Engine">
+	<bean id="e2" class="com.itp.model.Engine">  <!-- autowire-candidate="false" -->
 		<property name="engineLitre">
 			<value>1.2</value>
 		</property>
@@ -32,7 +32,7 @@
 		</property>
 	</bean>
 
-	<bean id="t1" class="com.itp.model.Tyre">
+	<bean id="tyre" class="com.itp.model.Tyre" > <!-- autowire-candidate="false" -->
 		<constructor-arg value="Radial"></constructor-arg>
 		<constructor-arg value="MRF"></constructor-arg>
 		<constructor-arg value="1200"></constructor-arg>
@@ -59,7 +59,29 @@
 	<constructor-arg value="Fortuner"></constructor-arg>
 	<constructor-arg value="5000"></constructor-arg>
 	
-	<constructor-arg ref="e1"></constructor-arg>
-	<constructor-arg ref="t1"></constructor-arg>
+	<constructor-arg ref="e2"></constructor-arg>
+	<constructor-arg ref="t2"></constructor-arg>
+	</bean>
+
+		
+	<bean id="c2" class="com.itp.model.Car" autowire="byName">
+	<property name="carType">
+	<value>Sedan</value>
+	</property>
+	
+	<property name="carMfgName">
+	<value>Tata</value>
+	</property>
+	
+	<property name="carModelName">
+	<value>Curve</value>
+	</property>
+	
+	<property name="carPrice">
+	<value>3000</value>
+	</property>
+	
+	<!-- <property name="engine" ref="e2"></property>
+	<property name="tyre" ref="t2"></property> -->
 	</bean>
 </beans>
