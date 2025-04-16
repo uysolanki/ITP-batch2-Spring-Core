@@ -84,4 +84,18 @@
 	<!-- <property name="engine" ref="e2"></property>
 	<property name="tyre" ref="t2"></property> -->
 	</bean>
+	
+	<bean id="s1" class="com.itp.model.Student" scope="prototype">
+		<property name="rno">
+			<value>18</value>
+		</property>
+
+		<property name="sname">
+			<value>Virat</value>
+		</property>
+
+		<property name="per">
+			<value>78.5</value>
+		</property>
+	</bean>
 </beans>
