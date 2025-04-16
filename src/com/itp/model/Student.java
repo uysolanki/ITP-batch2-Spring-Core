@@ -1,5 +1,8 @@
 package com.itp.model;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class Student// implements InitializingBean,DisposableBean
 {
 
@@ -48,6 +51,7 @@ public class Student// implements InitializingBean,DisposableBean
 	}
 
 
+	@PreDestroy
 	public void xyz() 
 	{
 		System.out.println("Called Just Before Destruction");
@@ -59,6 +63,7 @@ public class Student// implements InitializingBean,DisposableBean
 		System.out.println("Object Destroyed");
 	}
 	
+	@PostConstruct
 	public void abc() 
 	{
 	System.out.println("Called Immediately after Constructor");	
