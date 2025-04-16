@@ -17,8 +17,8 @@ public class DriverAppForJavaBasedBeans {
 //		Engine engine1=beanFactory.getBean("getEngineUsingConstructor",Engine.class);
 //		System.out.println(engine1);
 		
-		Engine engine1=beanFactory.getBean("e77",Engine.class);
-		System.out.println(engine1);
+		Car car1=beanFactory.getBean("c81",Car.class);
+		System.out.println(car1);
 		
 		}
 }
