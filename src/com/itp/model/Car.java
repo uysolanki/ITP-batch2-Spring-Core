@@ -10,12 +10,17 @@ public class Car {
 		private String carModelName;
 		private double carPrice;
 		
-		@Autowired
+		@Autowired  //autowire by-name
 		@Qualifier("e71")
 		private Engine engine;
 		
-		@Autowired
+		@Autowired  //autowire by-type
 		private Tyre tyre;
+		
+		@Autowired
+		private Gear gear;
+		
+		
 		
 		public Car() {}
 		public Car(String carType, String carMfgName, String carModelName, double carPrice, Engine engine, Tyre tyre) {
@@ -68,12 +73,11 @@ public class Car {
 		@Override
 		public String toString() {
 			return "Car [carType=" + carType + ", carMfgName=" + carMfgName + ", carModelName=" + carModelName
-					+ ", carPrice=" + carPrice + ", engine=" + engine + ", tyre=" + tyre + "]";
+					+ ", carPrice=" + carPrice + ", engine=" + engine + ", tyre=" + tyre + ", gear=" + gear + "]";
 		}
 		
-		public void start()
-		{
-			System.out.println("Car started...");
-		}
+		
+		
+		
 		
 }

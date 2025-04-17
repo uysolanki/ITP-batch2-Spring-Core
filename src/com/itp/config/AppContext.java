@@ -1,6 +1,7 @@
 package com.itp.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
@@ -9,6 +10,7 @@ import com.itp.model.Engine;
 import com.itp.model.Tyre;
 
 @Configuration
+@ComponentScan(basePackages = "com.itp")
 public class AppContext {
 	
 	@Bean(name="e70")
@@ -43,7 +45,6 @@ public class AppContext {
 		return tyre;
 	}
 	
-	
 	@Bean(name="c81")
 	@Scope("prototype")
 	public Car getCarUsingSetter()
@@ -59,3 +60,5 @@ public class AppContext {
 	
 
 }
+
+//
